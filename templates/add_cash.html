@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+    <h2>Add Cash</h2>
+    <!-- Create form for user to input symbol and # of shares to buy-->
+    <form action="/add_cash" method="post">
+        <div class="mb-3">
+            <input autofocus class="form-control mx-auto w-auto" autocomplete="off" type="number" name="new_cash" id="new_cash" placeholder="Cash">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

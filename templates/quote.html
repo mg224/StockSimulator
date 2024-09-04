@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h2>Quote</h2>
+    <!-- Create form for user to input symbol and submit it for a quote -->
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" type="text" name="symbol" id="symbol" placeholder="Symbol">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    <br>
+    {% if quote %}
+        <h5>Stock: {{ quote['symbol'] }} </h5>
+        <h5>Price: {{ quote['price']|usd }}</h5>
+    {% endif %}
+{% endblock %}
